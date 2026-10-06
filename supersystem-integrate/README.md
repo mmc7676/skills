@@ -17,5 +17,13 @@ Supports:
 
 ## Notes
 
-The skill is self-contained. Its references to Maxey0/SuperSpace, SCW, and "System One/Jev" are optional examples from the author's own runtime ([Maxey0](https://github.com/mmc7676/Maxey0)); the discover → model → bound → design → integrate → implement → validate → package → verify loop applies to any codebase.
+The skill is self-contained. Its references to Maxey0/SuperSpace, SCW, and "System One/Jev" are examples from the author's own runtime that can be ignored elsewhere ([Maxey0](https://github.com/mmc7676/Maxey0)); the discover → model → bound → design → integrate → implement → validate → package → verify loop applies to any codebase.
+
+## With effort-optimizer
+
+Reading, scaffolding and formatting run fast. Validation, secret scans, archive and checksum checks, and anything outward-facing (push, deploy, publish) run slow and directly verified. This skill's own consent boundary, not effort-optimizer, requires your confirmation for the outward-facing steps. Its rule against claiming results that did not occur is closely related to effort-optimizer's verified-versus-untested split. See [how effort-optimizer works with each skill](https://github.com/mmc7676/skills#how-effort-optimizer-works-with-each-skill).
+
+## License
+
+MIT, see [LICENSE](LICENSE).
 

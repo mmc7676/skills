@@ -1,0 +1,4 @@
+interface:
+  display_name: "LINKTREE Search"
+  short_description: "Hierarchical URL crawl and link-tree mapping"
+  default_prompt: "Use $linktree-search to build or adapt a deterministic hierarchical crawler that emits a tree, graph, and outline from a root URL."

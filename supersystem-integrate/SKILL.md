@@ -1,6 +1,7 @@
 ---
 name: "supersystem-integrate"
 description: Generative engineering skill for discovering the intent and feasibility of a new model, protocol, idea, or capability, integrating it modularly into an existing system, validating the result, and shipping the completed artifact.
+license: MIT
 ---
 
 # SuperSystem-Integrate
@@ -13,9 +14,11 @@ The human supplies intent, domain knowledge, constraints, corrections, and accep
 
 The objective is not an explanation. For software tasks, the objective is the finished artifact.
 
+Note: references to Maxey0/SuperSpace, SCW, and System One/Jev are examples from the author's own runtime; ignore them in other systems.
+
 ## Top-level token rule
 
-For tasks that require shipping software, this Skill has top-level authority over the **minimum and maximum token allocation for generation**.
+For tasks that require shipping software, this Skill sets the **minimum and maximum token allocation for generation**, unless the user or host sets a different limit.
 
 Use the available context primarily for:
 

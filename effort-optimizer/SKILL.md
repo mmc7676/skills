@@ -1,6 +1,7 @@
 ---
 name: "effort-optimizer"
 description: Mandatory, always-on skill that calibrates reasoning and execution effort to a task's actual stakes before acting on it — fast and low-verification for mechanical steps, slow and directly-verified for anything touching auth, security, production, or a claim the user will act on without double-checking it. Invoke this at the start of EVERY turn, not only when the user says "effort" or "optimize" explicitly — it is the default posture, not a special mode.
+license: MIT
 ---
 
 # Effort-Optimizer
