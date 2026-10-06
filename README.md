@@ -1,6 +1,6 @@
 # skills
 
-Personal Claude skills by [mmc7676](https://github.com/mmc7676). Each skill is a self-contained folder (`SKILL.md`, a `README.md`, and its own `LICENSE`) that works on its own, and each also ships as a ready-to-import zip in [`dist/`](dist/).
+Personal agent skills by [mmc7676](https://github.com/mmc7676), written in the open [Agent Skills](https://agentskills.io) format (a folder with a `SKILL.md`), so they are not tied to one product. Claude, Codex and many other agents and clients read the same format; see [Other agents and clients](#other-agents-and-clients). Each skill is a self-contained folder (`SKILL.md`, a `README.md`, and its own `LICENSE`) that works on its own, and each also ships as a ready-to-import zip in [`dist/`](dist/).
 
 > More skills are queued for upload. These are the first.
 
@@ -61,6 +61,8 @@ New-Item -ItemType Directory -Force "$HOME\.claude\skills" | Out-Null
 Copy-Item -Recurse skills\effort-optimizer, skills\supersystem-integrate, skills\linktree-search "$HOME\.claude\skills\"
 ```
 
+**Codex and other Agent Skills clients:** the folders are plain Agent Skills, so copy them into that client's skills directory. For Codex that is `$HOME/.agents/skills` for your user, or `.agents/skills` inside a repository, per OpenAI's Codex skills documentation. Invoke by name (for example `$effort-optimizer` in the Codex CLI) or let the agent match the skill's description.
+
 **Claude desktop / claude.ai:** open Customize, then Skills, then add a skill (the label varies by app version; look for "Upload a skill") and upload the matching zip from [`dist/`](dist/). Code execution and file creation must be enabled in your Claude settings for skills to run.
 
 Verify a download against [`dist/SHA256SUMS.txt`](dist/SHA256SUMS.txt):
@@ -70,6 +72,16 @@ cd dist && sha256sum -c SHA256SUMS.txt
 ```
 
 On Windows PowerShell, compare `(Get-FileHash .\effort-optimizer.zip -Algorithm SHA256).Hash` with the matching line in `SHA256SUMS.txt`.
+
+## Other agents and clients
+
+These skills follow the open [Agent Skills specification](https://agentskills.io/specification): a folder named after the skill, a `SKILL.md` with `name` and `description` frontmatter, and optional supporting files. All three pass those constraints (lowercase hyphenated name matching the folder, descriptions under the 1,024-character limit, `SKILL.md` under 500 lines, optional `license` field). The Agent Skills site lists the clients that support the format, including Claude, Claude Code, Codex, Gemini CLI, Cursor, GitHub Copilot, VS Code, OpenCode and Goose. Each client has its own skills folder and its own triggering behavior, so follow that client's own skills documentation for where to put the folder.
+
+What to know when you use them outside Claude:
+- I built and used these skills with Claude, and I have run Claude's validator on them. I have not run them inside Codex or the other clients, so treat cross-client behavior as expected from the spec rather than tested.
+- `effort-optimizer` is written to apply on every turn. That works where the client activates skills from their descriptions, or where you invoke it by name.
+- `linktree-search` includes `agents/openai.yaml`, which Codex-style clients use for display metadata. Other clients ignore it. The other two skills do not need one.
+- Install steps for the zips in `dist/` differ by client; the folders themselves work anywhere the format is supported.
 
 ## Licensing
 
