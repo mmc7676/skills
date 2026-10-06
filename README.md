@@ -45,7 +45,18 @@ See also [Maxey0](https://github.com/mmc7676/Maxey0) (the runtime and its core s
 
 ## Install
 
-**Claude Code:** copy a skill folder into your skills directory. Each skill folder installs the same way.
+**Claude Code plugin marketplace (easiest):** this repo is also a plugin marketplace, so you can install by name and update with a command.
+
+```bash
+claude plugin marketplace add mmc7676/skills
+claude plugin install effort-optimizer@mmc7676-skills
+claude plugin install supersystem-integrate@mmc7676-skills
+claude plugin install linktree-search@mmc7676-skills
+```
+
+Inside a session you can run `/plugin marketplace add mmc7676/skills` and then `/plugin install effort-optimizer@mmc7676-skills`. Plugin skills are namespaced by plugin name, for example `/effort-optimizer:effort-optimizer`.
+
+**Claude Code, manual copy:** copy a skill folder into your skills directory. Each skill folder installs the same way.
 
 ```bash
 git clone https://github.com/mmc7676/skills.git
