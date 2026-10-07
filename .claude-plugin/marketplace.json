@@ -8,39 +8,21 @@
   "plugins": [
     {
       "name": "effort-optimizer",
-      "source": "./",
+      "source": "./plugins/effort-optimizer",
       "description": "Always-on skill that matches reasoning and verification effort to a task's real stakes: fast on mechanical, reversible steps; slow and directly verified on auth, security, production, or claims you will act on unchecked.",
-      "skills": ["./effort-optimizer"],
-      "author": { "name": "mmc7676", "url": "https://github.com/mmc7676" },
-      "homepage": "https://github.com/mmc7676/skills",
-      "repository": "https://github.com/mmc7676/skills",
-      "license": "MIT",
-      "category": "productivity",
-      "keywords": ["agent-skills", "effort", "verification", "reliability"]
+      "category": "productivity"
     },
     {
       "name": "supersystem-integrate",
-      "source": "./",
+      "source": "./plugins/supersystem-integrate",
       "description": "Generative engineering skill: discover, model, bound, design, integrate, implement, validate, package and verify a new capability in an existing system, with an explicit consent boundary before anything outward-facing.",
-      "skills": ["./supersystem-integrate"],
-      "author": { "name": "mmc7676", "url": "https://github.com/mmc7676" },
-      "homepage": "https://github.com/mmc7676/skills",
-      "repository": "https://github.com/mmc7676/skills",
-      "license": "MIT",
-      "category": "development",
-      "keywords": ["agent-skills", "integration", "engineering", "shipping"]
+      "category": "development"
     },
     {
       "name": "linktree-search",
-      "source": "./",
+      "source": "./plugins/linktree-search",
       "description": "The LINKTREE method: deterministic, level-preserving URL crawling and indexing (tree, graph, outline) with sitemap-first, same-origin, robots-aware, polite, bounded defaults. A specification package with no crawler code.",
-      "skills": ["./linktree-search"],
-      "author": { "name": "mmc7676", "url": "https://github.com/mmc7676" },
-      "homepage": "https://github.com/mmc7676/skills",
-      "repository": "https://github.com/mmc7676/skills",
-      "license": "MIT",
-      "category": "development",
-      "keywords": ["agent-skills", "crawling", "sitemap", "robots"]
+      "category": "development"
     }
   ]
 }

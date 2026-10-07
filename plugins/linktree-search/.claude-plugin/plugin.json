@@ -1,0 +1,19 @@
+{
+  "name": "linktree-search",
+  "displayName": "LINKTREE Search",
+  "version": "1.0.0",
+  "description": "The LINKTREE method: deterministic, level-preserving URL crawling and indexing (tree, graph, outline) with sitemap-first, same-origin, robots-aware, polite, bounded defaults. A specification package with no crawler code.",
+  "author": {
+    "name": "mmc7676",
+    "url": "https://github.com/mmc7676"
+  },
+  "homepage": "https://github.com/mmc7676/skills",
+  "repository": "https://github.com/mmc7676/skills",
+  "license": "MIT",
+  "keywords": [
+    "agent-skills",
+    "crawling",
+    "sitemap",
+    "robots"
+  ]
+}

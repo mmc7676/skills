@@ -94,6 +94,14 @@ What to know when you use them outside Claude:
 - `linktree-search` includes `agents/openai.yaml`, which Codex-style clients use for display metadata. Other clients ignore it. The other two skills do not need one.
 - Install steps for the zips in `dist/` differ by client; the folders themselves work anywhere the format is supported.
 
+## Repository layout
+
+- `effort-optimizer/`, `supersystem-integrate/`, `linktree-search/`: the skills. These folders are the source of truth.
+- `plugins/<name>/`: a Claude plugin wrapper around each skill (a `plugin.json`, the skill under `skills/<name>/`, plus the README and LICENSE). Generated, so don't edit it by hand.
+- `dist/`: the importable zips and `SHA256SUMS.txt`. Also generated.
+- `.claude-plugin/marketplace.json`: the plugin marketplace that lists the three plugins.
+- `scripts/build.py`: after editing a skill, run `python scripts/build.py` to regenerate `plugins/` and `dist/`. Bump `PLUGIN_VERSION` in it for each release so installed plugins update.
+
 ## Licensing
 
 | Repo | License | Notes |
