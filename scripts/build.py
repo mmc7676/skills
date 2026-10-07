@@ -17,14 +17,14 @@ import shutil
 import zipfile
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-PLUGIN_VERSION = "1.0.0"
+PLUGIN_VERSION = "1.0.1"
 AUTHOR = {"name": "mmc7676", "url": "https://github.com/mmc7676"}
 HOME = "https://github.com/mmc7676/skills"
 
 SKILLS = {
     "effort-optimizer": {
         "displayName": "Effort Optimizer",
-        "description": "Always-on skill that matches reasoning and verification effort to a task's real stakes: fast on mechanical, reversible steps; slow and directly verified on auth, security, production, or claims you will act on unchecked.",
+        "description": "Skill that matches reasoning and verification effort to a task's real stakes: fast on mechanical, reversible steps; slow and directly verified on auth, security, production, or claims you will act on unchecked.",
         "keywords": ["agent-skills", "effort", "verification", "reliability"],
     },
     "supersystem-integrate": {

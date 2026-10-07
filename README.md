@@ -8,7 +8,7 @@ Personal agent skills by [mmc7676](https://github.com/mmc7676), written in the o
 
 | Skill | What it does | Contents | Folder | Zip |
 |---|---|---|---|---|
-| `effort-optimizer` | Always-on skill that matches reasoning and verification effort to a task's real stakes: fast on mechanical, reversible steps; slow and directly verified on anything touching auth, security, production, or a claim the user will act on unchecked. Reports "verified directly" and "plausible but untested" as different things. | `SKILL.md`, `README.md`, `LICENSE` | [effort-optimizer/](effort-optimizer/) | [zip](dist/effort-optimizer.zip) |
+| `effort-optimizer` | Skill that matches reasoning and verification effort to a task's real stakes: fast on mechanical, reversible steps; slow and directly verified on anything touching auth, security, production, or a claim the user will act on unchecked. Reports "verified directly" and "plausible but untested" as different things. | `SKILL.md`, `README.md`, `LICENSE` | [effort-optimizer/](effort-optimizer/) | [zip](dist/effort-optimizer.zip) |
 | `supersystem-integrate` | Generative engineering skill: discover the intent and feasibility of a new model, protocol, idea or capability, integrate it modularly into an existing system, validate it, and ship the finished artifact. Its Maxey0/SuperSpace passages are examples from the author's runtime; the loop works for any codebase. | `SKILL.md`, `README.md`, `LICENSE` | [supersystem-integrate/](supersystem-integrate/) | [zip](dist/supersystem-integrate.zip) |
 | `linktree-search` | The LINKTREE method: deterministic, level-preserving URL crawling and indexing. A root URL goes in; a tree, a normalized graph and an outline come out. Sitemap-first, same-origin, robots-aware, polite and bounded by default. A specification package: it contains no crawler code. | `SKILL.md`, `references/` (5 files), `agents/openai.yaml` (used by Codex-style runtimes, ignored by Claude), `README.md`, `LICENSE` | [linktree-search/](linktree-search/) | [zip](dist/linktree-search.zip) |
 
@@ -36,6 +36,14 @@ The lane mappings below are the default when you give no explicit effort signal.
 - Coverage claims: "verified directly" applies to pages that were actually fetched. A page only listed in a sitemap is "listed, not fetched".
 
 **With `scw-default-deployer`** (lives in Maxey0). A suggested pairing, not a built-in dependency. The deployer creates a bounded context window before a task runs. Use effort-optimizer to set how much verification happens inside it: mechanical child tasks run FAST, while admission, gate and provenance steps take the SLOW lane.
+
+## Does effort-optimizer stay active across a session?
+
+Not measured. Here is what has and has not been checked.
+
+- **Checked:** in two of the author's own Claude Code session logs, the skill ran when the user typed it, and there was no case of the model invoking it by itself when it was not typed. Do not rely on automatic activation. Invoke it by name for each task you want it applied to.
+- **How invoking works:** each invocation loads the full `SKILL.md` into that turn, so every typed call starts at full strength.
+- **Not checked:** whether its effect fades over many turns after a single load, and whether it survives context compaction in a long session. No evaluation has been run yet.
 
 ## Related skill that lives elsewhere
 
@@ -90,7 +98,7 @@ These skills follow the open [Agent Skills specification](https://agentskills.io
 
 What to know when you use them outside Claude:
 - I built and used these skills with Claude, and I have run Claude's validator on them. I have not run them inside Codex or the other clients, so treat cross-client behavior as expected from the spec rather than tested.
-- `effort-optimizer` is written to apply on every turn. That works where the client activates skills from their descriptions, or where you invoke it by name.
+- `effort-optimizer` is written to apply on every turn, but in the author's own session logs it ran only when it was invoked by name, so invoke it by name for each task. See [Does effort-optimizer stay active across a session?](#does-effort-optimizer-stay-active-across-a-session).
 - `linktree-search` includes `agents/openai.yaml`, which Codex-style clients use for display metadata. Other clients ignore it. The other two skills do not need one.
 - Install steps for the zips in `dist/` differ by client; the folders themselves work anywhere the format is supported.
 

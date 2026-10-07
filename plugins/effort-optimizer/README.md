@@ -1,6 +1,6 @@
 # Effort-Optimizer
 
-Mandatory, always-on skill that calibrates effort to a task's actual stakes before acting — not to how big the request sounds.
+Skill that calibrates effort to a task's actual stakes before acting — not to how big the request sounds. It is written to apply on every turn, but it activates when you invoke it by name (see below).
 
 Primary behavior: **classify → verify what's cheap and consequential → act at the matching speed**.
 
@@ -20,6 +20,10 @@ effort-optimizer sets how hard each step of another skill is pushed. These mappi
 - **scw-default-deployer** (in [Maxey0](https://github.com/mmc7676/Maxey0/tree/main/skills/scw-default-deployer)): a suggested pairing for deciding how much verification happens inside the context window it creates.
 
 Details: [how effort-optimizer works with each skill](https://github.com/mmc7676/skills#how-effort-optimizer-works-with-each-skill).
+
+## Does it stay active across a session?
+
+Not measured. In the author's own Claude Code session logs it ran when typed and never invoked itself, so invoke it by name for each task. Each invocation loads the full `SKILL.md` into that turn. Whether its effect fades over many turns after one load, or survives context compaction, has not been tested.
 
 ## License
 
