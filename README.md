@@ -39,11 +39,11 @@ The lane mappings below are the default when you give no explicit effort signal.
 
 ## Does effort-optimizer stay active across a session?
 
-Not measured. Here is what has and has not been checked.
+No. Invoking it applies it to that turn only; invoke it again for each later turn where you want it.
 
-- **Checked:** in two of the author's own Claude Code session logs, the skill ran when the user typed it, and there was no case of the model invoking it by itself when it was not typed. Do not rely on automatic activation. Invoke it by name for each task you want it applied to.
+- **Checked:** in two of the author's own Claude Code session logs, the skill ran when the user typed it, and there was no case of the model invoking it by itself when it was not typed. Do not rely on automatic activation.
 - **How invoking works:** each invocation loads the full `SKILL.md` into that turn, so every typed call starts at full strength.
-- **Not checked:** whether its effect fades over many turns after a single load, and whether it survives context compaction in a long session. No evaluation has been run yet.
+- **Not checked:** whether its effect lingers over later turns after a single load, and whether it survives context compaction in a long session. No evaluation has been run yet, so don't rely on it.
 
 ## Related skill that lives elsewhere
 
@@ -98,7 +98,7 @@ These skills follow the open [Agent Skills specification](https://agentskills.io
 
 What to know when you use them outside Claude:
 - I built and used these skills with Claude, and I have run Claude's validator on them. I have not run them inside Codex or the other clients, so treat cross-client behavior as expected from the spec rather than tested.
-- `effort-optimizer` is written to apply on every turn, but in the author's own session logs it ran only when it was invoked by name, so invoke it by name for each task. See [Does effort-optimizer stay active across a session?](#does-effort-optimizer-stay-active-across-a-session).
+- `effort-optimizer` applies to the turn in which you invoke it. It does not stay on for later turns, so invoke it again each time you want it. See [Does effort-optimizer stay active across a session?](#does-effort-optimizer-stay-active-across-a-session).
 - `linktree-search` includes `agents/openai.yaml`, which Codex-style clients use for display metadata. Other clients ignore it. The other two skills do not need one.
 - Install steps for the zips in `dist/` differ by client; the folders themselves work anywhere the format is supported.
 

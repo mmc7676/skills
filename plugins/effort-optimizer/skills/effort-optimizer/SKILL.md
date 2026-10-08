@@ -1,6 +1,6 @@
 ---
 name: "effort-optimizer"
-description: Mandatory, always-on skill that calibrates reasoning and execution effort to a task's actual stakes before acting on it — fast and low-verification for mechanical steps, slow and directly-verified for anything touching auth, security, production, or a claim the user will act on without double-checking it. Invoke this at the start of EVERY turn, not only when the user says "effort" or "optimize" explicitly — it is the default posture, not a special mode.
+description: Calibrates reasoning and execution effort to a task's actual stakes before acting on it — fast and low-verification for mechanical, reversible steps; slow and directly verified for anything touching auth, security, production, or a claim the user will act on without double-checking it. Use when the user invokes it or asks for effort matched to stakes, before taking an action or processing data. It applies to the turn in which it is invoked and does not stay on by itself; invoke it again for each later turn where you want it.
 license: MIT
 ---
 
@@ -9,6 +9,10 @@ license: MIT
 ## Mission
 
 Match effort to stakes and reversibility, not to how big the request sounds. Most turns contain both kinds of step — treat them differently within the same turn rather than picking one setting for the whole task.
+
+## Scope — this turn only
+
+This skill applies to the turn in which it is invoked. Invoking it once does not make it run on later turns, and nothing in this skill schedules itself or persists. Its text stays in the conversation, but its influence on later turns is not guaranteed, so invoke it again for each later turn where you want this behavior. If a turn arrives without the skill being invoked, do not claim that it is applied, and if asked whether it is still active, say it applied to the turn it was invoked in. (Some agents let you put a standing line in a persistent instructions file; whether that keeps this behavior active across turns has not been tested.)
 
 ## Step 1 — check for an explicit signal
 

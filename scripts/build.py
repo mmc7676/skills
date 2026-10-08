@@ -17,7 +17,7 @@ import shutil
 import zipfile
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-PLUGIN_VERSION = "1.0.1"
+PLUGIN_VERSION = "1.0.2"
 AUTHOR = {"name": "mmc7676", "url": "https://github.com/mmc7676"}
 HOME = "https://github.com/mmc7676/skills"
 

@@ -1,7 +1,7 @@
 {
   "name": "effort-optimizer",
   "displayName": "Effort Optimizer",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Skill that matches reasoning and verification effort to a task's real stakes: fast on mechanical, reversible steps; slow and directly verified on auth, security, production, or claims you will act on unchecked.",
   "author": {
     "name": "mmc7676",

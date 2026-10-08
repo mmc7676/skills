@@ -1,6 +1,6 @@
 # Effort-Optimizer
 
-Skill that calibrates effort to a task's actual stakes before acting — not to how big the request sounds. It is written to apply on every turn, but it activates when you invoke it by name (see below).
+Skill that calibrates effort to a task's actual stakes before acting — not to how big the request sounds. It applies to the turn in which you invoke it; it does not stay on for later turns (see below).
 
 Primary behavior: **classify → verify what's cheap and consequential → act at the matching speed**.
 
@@ -23,7 +23,7 @@ Details: [how effort-optimizer works with each skill](https://github.com/mmc7676
 
 ## Does it stay active across a session?
 
-Not measured. In the author's own Claude Code session logs it ran when typed and never invoked itself, so invoke it by name for each task. Each invocation loads the full `SKILL.md` into that turn. Whether its effect fades over many turns after one load, or survives context compaction, has not been tested.
+No. Invoking it applies it to that turn only. Invoke it again for each later turn where you want it. In the author's own Claude Code session logs it ran only when it was invoked by name, and it never invoked itself. Whether its effect lingers over later turns after one load, or survives context compaction, has not been tested, so don't rely on it.
 
 ## License
 

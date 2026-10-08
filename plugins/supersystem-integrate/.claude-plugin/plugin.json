@@ -1,7 +1,7 @@
 {
   "name": "supersystem-integrate",
   "displayName": "SuperSystem Integrate",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Generative engineering skill: discover, model, bound, design, integrate, implement, validate, package and verify a new capability in an existing system, with an explicit consent boundary before anything outward-facing.",
   "author": {
     "name": "mmc7676",
