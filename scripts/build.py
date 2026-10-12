@@ -9,6 +9,10 @@ linktree-search/) are the single source of truth. Run this after editing one:
 It rewrites plugins/<name>/ (a Claude plugin wrapper around the skill) and
 dist/<name>.zip plus dist/SHA256SUMS.txt. Bump PLUGIN_VERSION below on every
 release so installed plugins update.
+
+The shared listing icon lives at assets/icon.png (square PNG, 512-2048 px,
+under 2 MB) and is copied into each plugin as .claude-plugin/icon.png, where
+the directory validator looks for it. Edit it there, not in plugins/.
 """
 import hashlib
 import json
@@ -20,6 +24,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PLUGIN_VERSION = "1.0.2"
 AUTHOR = {"name": "mmc7676", "url": "https://github.com/mmc7676"}
 HOME = "https://github.com/mmc7676/skills"
+ICON = f"{ROOT}/assets/icon.png"  # shared listing icon, copied into every plugin
 
 SKILLS = {
     "effort-optimizer": {
@@ -78,6 +83,9 @@ def build_plugin(name, meta):
         "keywords": meta["keywords"],
     }
     write(f"{dst}/.claude-plugin/plugin.json", (json.dumps(manifest, indent=2) + "\n").encode("utf8"))
+    if not os.path.isfile(ICON):
+        raise SystemExit(f"missing {ICON}: the directory validator warns ICON_MISSING without it")
+    write(f"{dst}/.claude-plugin/icon.png", open(ICON, "rb").read())
 
 
 def build_zip(name):
